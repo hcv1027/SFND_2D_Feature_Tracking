@@ -143,7 +143,13 @@ int main(int argc, const char *argv[]) {
     bool bFocusOnVehicle = true;
     cv::Rect vehicleRect(535, 180, 180, 150);
     if (bFocusOnVehicle) {
-      // ...
+      vector<cv::KeyPoint> precedingKeypoints;
+      for (int i = 0; i < keypoints.size(); i++) {
+        if (vehicleRect.contains(keypoints[i].pt)) {
+          precedingKeypoints.push_back(keypoints[i]);
+        }
+      }
+      keypoints.swap(precedingKeypoints);
     }
 
     //// EOF STUDENT ASSIGNMENT
