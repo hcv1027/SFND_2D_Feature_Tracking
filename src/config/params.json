@@ -1,0 +1,12 @@
+{
+    "_detectorOption": [
+        "HARRIS",
+        "SHITOMASI",
+        "FAST",
+        "BRISK",
+        "ORB",
+        "AKAZE",
+        "SIFT"
+    ],
+    "detectorType": "SIFT"
+}

@@ -18,10 +18,9 @@
 
 #include "dataStructures.h"
 
-void detKeypointsHarris(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img,
-                        bool bVis = false);
 void detKeypointsShiTomasi(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img,
-                           bool bVis = false);
+                           bool useHarris = false, bool bVis = false);
+
 void detKeypointsModern(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img,
                         std::string detectorType, bool bVis = false);
 void descKeypoints(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img,
@@ -31,5 +30,8 @@ void matchDescriptors(std::vector<cv::KeyPoint> &kPtsSource,
                       cv::Mat &descRef, std::vector<cv::DMatch> &matches,
                       std::string descriptorType, std::string matcherType,
                       std::string selectorType);
+
+void showImage(const std::string &type, std::vector<cv::KeyPoint> &keypoints,
+               cv::Mat &img);
 
 #endif /* matching2D_hpp */
