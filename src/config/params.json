@@ -8,5 +8,29 @@
         "AKAZE",
         "SIFT"
     ],
-    "detectorType": "SIFT"
+    "_descriptorMethodOption": [
+        "BRISK",
+        "BRIEF",
+        "ORB",
+        "FREAK",
+        "AKAZE",
+        "SIFT"
+    ],
+    "_matcherOption": [
+        "MAT_BF",
+        "MAT_FLANN"
+    ],
+    "_descriptorOption": [
+        "DES_BINARY",
+        "DES_HOG"
+    ],
+    "_selectorOption": [
+        "SEL_NN",
+        "SEL_KNN"
+    ],
+    "detectorType": "SIFT",
+    "descriptorMethod": "SIFT",
+    "matcherType": "MAT_BF",
+    "descriptorType": "DES_HOG",
+    "selectorType": "SEL_KNN"
 }

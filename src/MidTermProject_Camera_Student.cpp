@@ -9,11 +9,11 @@
 #include <opencv2/features2d.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include "json.hpp"
-// #include <opencv2/xfeatures2d.hpp>
-// #include <opencv2/xfeatures2d/nonfree.hpp>
+#include <opencv2/xfeatures2d.hpp>
+#include <opencv2/xfeatures2d/nonfree.hpp>
 #include <sstream>
 #include <vector>
+#include "json.hpp"
 
 #include "dataStructures.h"
 #include "matching2D.hpp"
@@ -22,6 +22,10 @@ using namespace std;
 
 struct Params {
   string detectorType;
+  string descriptorMethod;
+  string matcherType;
+  string descriptorType;
+  string selectorType;
 
   Params() = default;
   ~Params() = default;
@@ -38,6 +42,10 @@ void readConfig() {
   json_stream.close();
 
   params.detectorType = params_json["detectorType"];
+  params.descriptorMethod = params_json["descriptorMethod"];
+  params.matcherType = params_json["matcherType"];
+  params.descriptorType = params_json["descriptorType"];
+  params.selectorType = params_json["selectorType"];
 
   /* params.filterRes = params_json["filterRes"];
   params.minPoint =
@@ -159,7 +167,8 @@ int main(int argc, const char *argv[]) {
     if (bLimitKpts) {
       int maxKeypoints = 50;
 
-      if (detectorType.compare("SHITOMASI") == 0) {
+      if (detectorType.compare("SHITOMASI") == 0 ||
+          detectorType.compare("HARRIS") == 0) {
         // there is no response info, so keep the first 50 as they are
         // sorted in descending quality order
         keypoints.erase(keypoints.begin() + maxKeypoints, keypoints.end());
@@ -176,13 +185,15 @@ int main(int argc, const char *argv[]) {
 
     //// STUDENT ASSIGNMENT
     //// TASK MP.4 -> add the following descriptors in file matching2D.cpp and
-    /// enable string-based selection based on descriptorType / -> BRIEF, ORB,
+    /// enable string-based selection based on descriptorMethod / -> BRIEF, ORB,
     /// FREAK, AKAZE, SIFT
 
     cv::Mat descriptors;
-    string descriptorType = "BRISK";  // BRIEF, ORB, FREAK, AKAZE, SIFT
+    string descriptorMethod =
+        params.descriptorMethod;  // BRIEF, ORB, FREAK, AKAZE, SIFT
     descKeypoints(dataBuffer.rbegin()->keypoints,
-                  dataBuffer.rbegin()->cameraImg, descriptors, descriptorType);
+                  dataBuffer.rbegin()->cameraImg, descriptors,
+                  descriptorMethod);
     //// EOF STUDENT ASSIGNMENT
 
     // push descriptors for current frame to end of data buffer
@@ -195,9 +206,9 @@ int main(int argc, const char *argv[]) {
       /* MATCH KEYPOINT DESCRIPTORS */
 
       vector<cv::DMatch> matches;
-      string matcherType = "MAT_BF";         // MAT_BF, MAT_FLANN
-      string descriptorType = "DES_BINARY";  // DES_BINARY, DES_HOG
-      string selectorType = "SEL_NN";        // SEL_NN, SEL_KNN
+      string matcherType = params.matcherType;        // MAT_BF, MAT_FLANN
+      string descriptorType = params.descriptorType;  // DES_BINARY, DES_HOG
+      string selectorType = params.selectorType;      // SEL_NN, SEL_KNN
 
       //// STUDENT ASSIGNMENT
       //// TASK MP.5 -> add FLANN matching in file matching2D.cpp
