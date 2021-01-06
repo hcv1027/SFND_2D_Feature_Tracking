@@ -1,0 +1,91 @@
+AKAZE_ORB.txt
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1351 keypoints in 61.9295 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 6.76871 ms
+#3 : EXTRACT DESCRIPTORS done
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1327 keypoints in 51.9127 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 6.68201 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=166 matches in 0.254048 ms
+# keypoints removed = 36
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1311 keypoints in 55.0273 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 6.74661 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=157 matches in 0.20056 ms
+# keypoints removed = 28
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1351 keypoints in 53.9779 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 6.72254 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=161 matches in 0.188004 ms
+# keypoints removed = 33
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1360 keypoints in 54.8593 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 6.80712 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=155 matches in 0.197143 ms
+# keypoints removed = 40
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1347 keypoints in 53.0949 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 6.72678 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=163 matches in 0.206441 ms
+# keypoints removed = 31
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1363 keypoints in 57.8914 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 6.67233 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=164 matches in 0.21528 ms
+# keypoints removed = 32
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1331 keypoints in 55.0102 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 7.52695 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=173 matches in 0.22955 ms
+# keypoints removed = 36
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1358 keypoints in 58.6709 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 7.39172 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=175 matches in 0.254071 ms
+# keypoints removed = 38
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1331 keypoints in 55.4832 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 6.77716 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=177 matches in 0.229637 ms
+# keypoints removed = 31
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+Keypoint time: 55.7857
+Descriptor time: 6.88219
+Match time: 0.219415

@@ -1,0 +1,91 @@
+Harris_ORB
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=492 keypoints in 13.1898 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 3.236 ms
+#3 : EXTRACT DESCRIPTORS done
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=502 keypoints in 12.0792 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 2.65391 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=50 matches in 0.112192 ms
+# keypoints removed = 4
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=516 keypoints in 12.7625 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 3.04038 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=54 matches in 0.087468 ms
+# keypoints removed = 10
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=524 keypoints in 12.206 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 2.80756 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=53 matches in 0.072328 ms
+# keypoints removed = 5
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=523 keypoints in 11.9221 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 2.82646 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=55 matches in 0.077233 ms
+# keypoints removed = 4
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=511 keypoints in 11.8276 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 2.81747 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=56 matches in 0.079261 ms
+# keypoints removed = 8
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=505 keypoints in 12.1523 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 2.85029 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=58 matches in 0.09536 ms
+# keypoints removed = 8
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=510 keypoints in 11.7604 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 2.72255 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=57 matches in 0.079561 ms
+# keypoints removed = 7
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=529 keypoints in 11.8778 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 2.80353 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=61 matches in 0.134551 ms
+# keypoints removed = 3
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=520 keypoints in 12.1052 ms
+#2 : DETECT KEYPOINTS done
+ORB descriptor extraction in 2.82029 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=59 matches in 0.149245 ms
+# keypoints removed = 5
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+Keypoint time: 12.1883
+Descriptor time: 2.85784
+Match time: 0.0985777

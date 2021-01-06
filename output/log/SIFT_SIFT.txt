@@ -1,0 +1,91 @@
+SIFT_SIFT.txt
+
+#1 : LOAD IMAGE INTO BUFFER done
+SIFT detection with n=1438 keypoints in 101.107 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 64.6263 ms
+#3 : EXTRACT DESCRIPTORS done
+#1 : LOAD IMAGE INTO BUFFER done
+SIFT detection with n=1371 keypoints in 80.8627 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 64.8265 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=138 matches in 0.347005 ms
+# keypoints removed = 56
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+SIFT detection with n=1380 keypoints in 81.7572 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 65.5604 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=132 matches in 0.1809 ms
+# keypoints removed = 51
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+SIFT detection with n=1335 keypoints in 80.1426 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 66.1725 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=124 matches in 0.209845 ms
+# keypoints removed = 39
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+SIFT detection with n=1305 keypoints in 79.035 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 64.6498 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=137 matches in 0.190316 ms
+# keypoints removed = 44
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+SIFT detection with n=1369 keypoints in 87.2373 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 64.3476 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=134 matches in 0.256079 ms
+# keypoints removed = 44
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+SIFT detection with n=1396 keypoints in 81.1544 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 64.5029 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=140 matches in 0.304478 ms
+# keypoints removed = 59
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+SIFT detection with n=1382 keypoints in 79.0121 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 64.1149 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=137 matches in 0.294367 ms
+# keypoints removed = 55
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+SIFT detection with n=1463 keypoints in 81.2112 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 64.1174 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=148 matches in 0.291318 ms
+# keypoints removed = 46
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+SIFT detection with n=1422 keypoints in 82.3117 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 64.1785 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=159 matches in 0.233613 ms
+# keypoints removed = 55
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+Keypoint time: 83.3831
+Descriptor time: 64.7097
+Match time: 0.256436

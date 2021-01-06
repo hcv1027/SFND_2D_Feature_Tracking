@@ -1,0 +1,91 @@
+AKAZE_AKAZE.txt
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1351 keypoints in 59.6126 ms
+#2 : DETECT KEYPOINTS done
+AKAZE descriptor extraction in 44.7843 ms
+#3 : EXTRACT DESCRIPTORS done
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1327 keypoints in 53.5158 ms
+#2 : DETECT KEYPOINTS done
+AKAZE descriptor extraction in 45.8694 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=166 matches in 0.310063 ms
+# keypoints removed = 28
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1311 keypoints in 55.6589 ms
+#2 : DETECT KEYPOINTS done
+AKAZE descriptor extraction in 46.485 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=157 matches in 0.240497 ms
+# keypoints removed = 19
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1351 keypoints in 54.3208 ms
+#2 : DETECT KEYPOINTS done
+AKAZE descriptor extraction in 49.006 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=161 matches in 1.17045 ms
+# keypoints removed = 28
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1360 keypoints in 54.6202 ms
+#2 : DETECT KEYPOINTS done
+AKAZE descriptor extraction in 48.9886 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=155 matches in 0.255061 ms
+# keypoints removed = 28
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1347 keypoints in 55.5042 ms
+#2 : DETECT KEYPOINTS done
+AKAZE descriptor extraction in 49.0959 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=163 matches in 0.25243 ms
+# keypoints removed = 34
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1363 keypoints in 55.899 ms
+#2 : DETECT KEYPOINTS done
+AKAZE descriptor extraction in 49.2751 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=164 matches in 0.265468 ms
+# keypoints removed = 18
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1331 keypoints in 56.0921 ms
+#2 : DETECT KEYPOINTS done
+AKAZE descriptor extraction in 52.0449 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=173 matches in 0.292561 ms
+# keypoints removed = 26
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1358 keypoints in 54.215 ms
+#2 : DETECT KEYPOINTS done
+AKAZE descriptor extraction in 48.0462 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=175 matches in 0.310087 ms
+# keypoints removed = 24
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+AKAZE detection with n=1331 keypoints in 53.6237 ms
+#2 : DETECT KEYPOINTS done
+AKAZE descriptor extraction in 45.5605 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=177 matches in 0.288545 ms
+# keypoints removed = 27
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+Keypoint time: 55.3062
+Descriptor time: 47.9156
+Match time: 0.376129

@@ -1,0 +1,91 @@
+SHITOMASI_SIFT
+
+#1 : LOAD IMAGE INTO BUFFER done
+Shi-Tomasi detection with n=1370 keypoints in 13.863 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 15.6549 ms
+#3 : EXTRACT DESCRIPTORS done
+#1 : LOAD IMAGE INTO BUFFER done
+Shi-Tomasi detection with n=1301 keypoints in 10.9556 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 16.8551 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=125 matches in 0.205879 ms
+# keypoints removed = 13
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Shi-Tomasi detection with n=1361 keypoints in 12.7364 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 16.8172 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=118 matches in 0.177269 ms
+# keypoints removed = 9
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Shi-Tomasi detection with n=1358 keypoints in 12.5435 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 17.5792 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=123 matches in 0.261374 ms
+# keypoints removed = 19
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Shi-Tomasi detection with n=1333 keypoints in 12.5187 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 17.0301 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=120 matches in 0.241369 ms
+# keypoints removed = 17
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Shi-Tomasi detection with n=1284 keypoints in 12.2554 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 17.1054 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=120 matches in 0.204013 ms
+# keypoints removed = 21
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Shi-Tomasi detection with n=1322 keypoints in 12.7806 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 17.3189 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=113 matches in 0.185579 ms
+# keypoints removed = 12
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Shi-Tomasi detection with n=1366 keypoints in 12.6184 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 16.7502 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=114 matches in 0.284473 ms
+# keypoints removed = 18
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Shi-Tomasi detection with n=1389 keypoints in 12.9234 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 16.9258 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=123 matches in 0.262772 ms
+# keypoints removed = 17
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Shi-Tomasi detection with n=1339 keypoints in 12.8162 ms
+#2 : DETECT KEYPOINTS done
+SIFT descriptor extraction in 16.552 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=111 matches in 0.191743 ms
+# keypoints removed = 14
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+Keypoint time: 12.6011
+Descriptor time: 16.8589
+Match time: 0.22383

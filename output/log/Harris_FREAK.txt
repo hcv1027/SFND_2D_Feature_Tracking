@@ -1,0 +1,91 @@
+Harris_FREAK
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=492 keypoints in 13.5478 ms
+#2 : DETECT KEYPOINTS done
+FREAK descriptor extraction in 24.5331 ms
+#3 : EXTRACT DESCRIPTORS done
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=502 keypoints in 11.1536 ms
+#2 : DETECT KEYPOINTS done
+FREAK descriptor extraction in 22.6907 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=50 matches in 0.127012 ms
+# keypoints removed = 7
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=516 keypoints in 8.49469 ms
+#2 : DETECT KEYPOINTS done
+FREAK descriptor extraction in 22.7633 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=54 matches in 0.118389 ms
+# keypoints removed = 9
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=524 keypoints in 8.70181 ms
+#2 : DETECT KEYPOINTS done
+FREAK descriptor extraction in 22.1313 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=53 matches in 0.115699 ms
+# keypoints removed = 9
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=523 keypoints in 8.8729 ms
+#2 : DETECT KEYPOINTS done
+FREAK descriptor extraction in 22.2306 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=55 matches in 0.112331 ms
+# keypoints removed = 15
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=511 keypoints in 8.54387 ms
+#2 : DETECT KEYPOINTS done
+FREAK descriptor extraction in 22.6493 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=56 matches in 0.096751 ms
+# keypoints removed = 14
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=505 keypoints in 8.51494 ms
+#2 : DETECT KEYPOINTS done
+FREAK descriptor extraction in 22.3506 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=58 matches in 0.146922 ms
+# keypoints removed = 11
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=510 keypoints in 8.46748 ms
+#2 : DETECT KEYPOINTS done
+FREAK descriptor extraction in 22.3288 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=57 matches in 0.150504 ms
+# keypoints removed = 14
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=529 keypoints in 8.47537 ms
+#2 : DETECT KEYPOINTS done
+FREAK descriptor extraction in 22.4504 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=61 matches in 0.10346 ms
+# keypoints removed = 13
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+#1 : LOAD IMAGE INTO BUFFER done
+Harris detection with n=520 keypoints in 8.61217 ms
+#2 : DETECT KEYPOINTS done
+FREAK descriptor extraction in 22.1889 ms
+#3 : EXTRACT DESCRIPTORS done
+BF matching cross-check=0 (KNN) with n=59 matches in 0.132655 ms
+# keypoints removed = 8
+#4 : MATCH KEYPOINT DESCRIPTORS done
+
+Keypoint time: 9.33847
+Descriptor time: 22.6317
+Match time: 0.122636
