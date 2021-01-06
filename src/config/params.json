@@ -28,9 +28,9 @@
         "SEL_NN",
         "SEL_KNN"
     ],
-    "detectorType": "SIFT",
-    "descriptorMethod": "SIFT",
+    "detectorType": "HARRIS",
+    "descriptorMethod": "BRISK",
     "matcherType": "MAT_BF",
-    "descriptorType": "DES_HOG",
+    "descriptorType": "DES_BINARY",
     "selectorType": "SEL_KNN"
 }

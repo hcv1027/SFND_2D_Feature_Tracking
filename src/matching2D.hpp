@@ -19,17 +19,20 @@
 #include "dataStructures.h"
 
 void detKeypointsShiTomasi(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img,
-                           bool useHarris = false, bool bVis = false);
+                           double &time, bool useHarris = false,
+                           bool bVis = false);
 
 void detKeypointsModern(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img,
-                        std::string detectorType, bool bVis = false);
+                        std::string detectorType, double &time,
+                        bool bVis = false);
 void descKeypoints(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img,
-                   cv::Mat &descriptors, std::string descriptorMethod);
+                   cv::Mat &descriptors, std::string descriptorMethod,
+                   double &time);
 void matchDescriptors(std::vector<cv::KeyPoint> &kPtsSource,
                       std::vector<cv::KeyPoint> &kPtsRef, cv::Mat &descSource,
                       cv::Mat &descRef, std::vector<cv::DMatch> &matches,
                       std::string descriptorType, std::string matcherType,
-                      std::string selectorType);
+                      std::string selectorType, double &time);
 
 void showImage(const std::string &type, std::vector<cv::KeyPoint> &keypoints,
                cv::Mat &img);

@@ -88,9 +88,12 @@ int main(int argc, const char *argv[]) {
   bool bVis = false;           // visualize results
 
   /* MAIN LOOP OVER ALL IMAGES */
-
+  int counter = 0;
+  double keypointTime = 0.0;
+  double descriptorTime = 0.0;
+  double matchTime = 0.0;
   for (size_t imgIndex = 0; imgIndex <= imgEndIndex - imgStartIndex;
-       imgIndex++) {
+       imgIndex++, counter++) {
     /* LOAD IMAGE INTO BUFFER */
 
     // assemble filenames for current index
@@ -132,15 +135,15 @@ int main(int argc, const char *argv[]) {
     ///-> HARRIS, FAST, BRISK, ORB, AKAZE, SIFT
 
     if (detectorType.compare("SHITOMASI") == 0) {
-      detKeypointsShiTomasi(keypoints, imgGray, false, false);
+      detKeypointsShiTomasi(keypoints, imgGray, keypointTime, false, false);
     } else if (detectorType.compare("HARRIS") == 0) {
-      detKeypointsShiTomasi(keypoints, imgGray, true, false);
+      detKeypointsShiTomasi(keypoints, imgGray, keypointTime, true, false);
     } else if (detectorType.compare("FAST") == 0 ||
                detectorType.compare("BRISK") == 0 ||
                detectorType.compare("ORB") == 0 ||
                detectorType.compare("AKAZE") == 0 ||
                detectorType.compare("SIFT") == 0) {
-      detKeypointsModern(keypoints, imgGray, detectorType, false);
+      detKeypointsModern(keypoints, imgGray, detectorType, keypointTime, false);
     }
     //// EOF STUDENT ASSIGNMENT
 
@@ -159,6 +162,16 @@ int main(int argc, const char *argv[]) {
       }
       keypoints.swap(precedingKeypoints);
     }
+    /* if (imgIndex == 0) {
+      cv::Mat visImage = img.clone();
+
+      cv::drawKeypoints(img, keypoints, visImage, cv::Scalar::all(-1),
+                        cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+      cv::rectangle(visImage, vehicleRect, cv::Scalar(0, 0, 255), 1);
+      imwrite("../output/" + detectorType + "_00.png", visImage);
+    }
+    cout << detectorType << " detects " << keypoints.size() << " keypoints"
+         << endl; */
 
     //// EOF STUDENT ASSIGNMENT
 
@@ -192,8 +205,8 @@ int main(int argc, const char *argv[]) {
     string descriptorMethod =
         params.descriptorMethod;  // BRIEF, ORB, FREAK, AKAZE, SIFT
     descKeypoints(dataBuffer.rbegin()->keypoints,
-                  dataBuffer.rbegin()->cameraImg, descriptors,
-                  descriptorMethod);
+                  dataBuffer.rbegin()->cameraImg, descriptors, descriptorMethod,
+                  descriptorTime);
     //// EOF STUDENT ASSIGNMENT
 
     // push descriptors for current frame to end of data buffer
@@ -219,17 +232,17 @@ int main(int argc, const char *argv[]) {
                        dataBuffer.rbegin()->keypoints,
                        next(dataBuffer.rbegin())->descriptors,
                        dataBuffer.rbegin()->descriptors, matches,
-                       descriptorType, matcherType, selectorType);
+                       descriptorType, matcherType, selectorType, matchTime);
 
       //// EOF STUDENT ASSIGNMENT
 
       // store matches in current data frame
       dataBuffer.rbegin()->kptMatches = matches;
 
-      cout << "#4 : MATCH KEYPOINT DESCRIPTORS done" << endl;
+      cout << "#4 : MATCH KEYPOINT DESCRIPTORS done" << endl << endl;
 
       // visualize matches between current and previous image
-      bVis = true;
+      bVis = false;
       if (bVis) {
         cv::Mat matchImg = (dataBuffer.rbegin()->cameraImg).clone();
         cv::drawMatches(
@@ -242,13 +255,18 @@ int main(int argc, const char *argv[]) {
         string windowName = "Matching keypoints between two camera images";
         cv::namedWindow(windowName, 7);
         cv::imshow(windowName, matchImg);
-        cout << "Press key to continue to next image" << endl << endl;
+        cout << "Press key to continue to next image" << endl;
         cv::waitKey(0);  // wait for key to be pressed
       }
       bVis = false;
     }
 
   }  // eof loop over all images
+
+  // Log for analysis
+  cout << "Average Keypoint time: " << keypointTime / counter << endl;
+  cout << "Average Descriptor time: " << descriptorTime / counter << endl;
+  cout << "Average Match time: " << matchTime / (counter - 1) << endl << endl;
 
   return 0;
 }
