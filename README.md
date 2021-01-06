@@ -37,8 +37,8 @@ See the classroom instruction and code comments for more details on each of thes
 ## Basic Build Instructions
 
 1. Clone this repo.
-2. Make a build directory in the top level directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
+2. Make a build directory in the top level directory: `mkdir build || cd build`
+3. Compile: `cmake .. || make`
 4. Run it: `./2D_feature_tracking`.
 ---
 
@@ -60,7 +60,7 @@ if (dataBuffer.size() == dataBufferSize) {
 
 For **HARRIS detector**, I modify `void detKeypointsShiTomasi()` to add one more boolean parameter to switch between `HARRIS` and `ShiTomasi`.
 ```c++
-void detKeypointsShiTomasi(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img,
+void detKeypointsShiTomasi(std::vector<cv::KeyPoint> |keypoints, cv::Mat |img,
                            bool useHarris = false, bool bVis = false) {
   // ...
   // Using useHarris to choose HARRIS or ShiTomasi descriptor.
@@ -72,7 +72,7 @@ void detKeypointsShiTomasi(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img,
 
 For **FAST**, **BRISK**, **ORB**, **AKAZE**, and **SIFT**, I implement in the function `void detKeypointsModern()`.
 ```c++
-void detKeypointsModern(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img,
+void detKeypointsModern(std::vector<cv::KeyPoint> |keypoints, cv::Mat |img,
                         std::string detectorType, bool bVis) {
   cv::Ptr<cv::FeatureDetector> detector;
   if (detectorType.compare("FAST") == 0) {
@@ -123,8 +123,8 @@ if (bFocusOnVehicle) {
 
 I implement **BRIEF**, **ORB**, **FREAK**, **AKAZE** and **SIFT** descriptor in the function `void descKeypoints`, using the parameter `descriptorMethod` to choose from one of them.
 ```c++
-void descKeypoints(vector<cv::KeyPoint> &keypoints, cv::Mat &img,
-                   cv::Mat &descriptors, string descriptorMethod) {
+void descKeypoints(vector<cv::KeyPoint> |keypoints, cv::Mat |img,
+                   cv::Mat |descriptors, string descriptorMethod) {
   // select appropriate descriptor
   cv::Ptr<cv::DescriptorExtractor> extractor;
   if (descriptorMethod.compare("BRISK") == 0) {
@@ -162,9 +162,9 @@ void descKeypoints(vector<cv::KeyPoint> &keypoints, cv::Mat &img,
 
 I implement **FLANN matching** and **k-nearest neighbor selection** in the function `void matchDescriptors`.
 ```c++
-void matchDescriptors(std::vector<cv::KeyPoint> &kPtsSource,
-                      std::vector<cv::KeyPoint> &kPtsRef, cv::Mat &descSource,
-                      cv::Mat &descRef, std::vector<cv::DMatch> &matches,
+void matchDescriptors(std::vector<cv::KeyPoint> |kPtsSource,
+                      std::vector<cv::KeyPoint> |kPtsRef, cv::Mat |descSource,
+                      cv::Mat |descRef, std::vector<cv::DMatch> |matches,
                       std::string descriptorType, std::string matcherType,
                       std::string selectorType) {
   // configure matcher
@@ -223,20 +223,15 @@ void matchDescriptors(std::vector<cv::KeyPoint> &kPtsSource,
 *Count the number of keypoints on the preceding vehicle for all 10 images and take note of the distribution of their neighborhood size. Do this for all the detectors you have implemented.*
 
 **The number of keypoints**
-
-$$
-\begin{array}{l|c}
-    Descriptor & Img.0 & Img.1 & Img.2 & Img.3 & Img.4 & Img.5 & Img.6 & Img.7 & Img.8 & Img.9 \\
-    \hline
-    Harris & 50 & 54 & 53 & 55 & 56 & 58 & 57 & 61 & 59 & 57 \\
-    Shi-Tomasi & 125 & 118 & 123 & 120 & 120 & 113 & 114 & 123 & 111 & 112 \\
-    FAST & 149 & 152 & 150 & 155 & 149 & 149 & 156 & 150 & 138 & 143 \\
-    BRISK & 264 & 282 & 282 & 277 & 297 & 279 & 289 & 272 & 266 & 254 \\
-    ORB & 92 & 102 & 106 & 113 & 109 & 125 & 130 & 129 & 127 & 128 \\
-    AKAZE & 166 & 157 & 161 & 155 & 163 & 164 & 173 & 175 & 177 & 179 \\
-    SIFT & 138 & 132 & 124 & 137 & 134 & 140 & 137 & 148 & 159 & 137 \\
-\end{array}
-$$
+| Descriptor | Img.0 | Img.1 | Img.2 | Img.3 | Img.4 | Img.5 | Img.6 | Img.7 | Img.8 | Img.9 |
+| ---------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| Harris     | 50    | 54    | 53    | 55    | 56    | 58    | 57    | 61    | 59    | 57    |
+| Shi-Tomasi | 125   | 118   | 123   | 120   | 120   | 113   | 114   | 123   | 111   | 112   |
+| FAST       | 149   | 152   | 150   | 155   | 149   | 149   | 156   | 150   | 138   | 143   |
+| BRISK      | 264   | 282   | 282   | 277   | 297   | 279   | 289   | 272   | 266   | 254   |
+| ORB        | 92    | 102   | 106   | 113   | 109   | 125   | 130   | 129   | 127   | 128   |
+| AKAZE      | 166   | 157   | 161   | 155   | 163   | 164   | 173   | 175   | 177   | 179   |
+| SIFT       | 138   | 132   | 124   | 137   | 134   | 140   | 137   | 148   | 159   | 137   |
 
 **The distribution of keypoint's neighborhood size**
 
@@ -274,77 +269,73 @@ $$
 
 According to [this discution](https://github.com/kyamagu/mexopencv/issues/351#issuecomment-319528154), **KAZE/AKAZE** descriptors will only work with **KAZE/AKAZE** keypoints. And **SIFT(detector) + ORB(descriptor)** will encounter out of memory probloem in my case.
 
-$$
-\begin{array}{l|c}
-    Combination(detector + descriptor) & Img.0-1 & Img.1-2 & Img.2-3 & Img.3-4 & Img.4-5 & Img.5-6 & Img.6-7 & Img.7-8 & Img.8-9 \\
-    \hline
-    Harris + BRISK & 50 & 54 & 53 & 55 & 56 & 58 & 57 & 61 & 59 \\
-    Harris + BRIEF & 50 & 54 & 53 & 55 & 56 & 58 & 57 & 61 & 59 \\
-    Harris + ORB & 50 & 54 & 53 & 55 & 56 & 58 & 57 & 61 & 59 & \\
-    Harris + FREAK & 50 & 54 & 53 & 55 & 56 & 58 & 57 & 61 & 59 \\
-    Harris + AKAZE & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A \\
-    Harris + SIFT & 50 & 54 & 53 & 55 & 56 & 58 & 57 & 61 & 59 \\
-    \hline \\
-    SHITOMASI + BRISK & 125 & 118 & 123 & 120 & 120 & 113 & 114 & 123 & 111 \\
-    SHITOMASI + BRIEF & 125 & 118 & 123 & 120 & 120 & 113 & 114 & 123 & 111 \\
-    SHITOMASI + ORB & 125 & 118 & 123 & 120 & 120 & 113 & 114 & 123 & 111 \\
-    SHITOMASI + FREAK & 125 & 118 & 123 & 120 & 120 & 113 & 114 & 123 & 111 \\
-    SHITOMASI + AKAZE & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A \\
-    SHITOMASI + SIFT & 125 & 118 & 123 & 120 & 120 & 113 & 114 & 123 & 111 \\
-    \hline \\
-    FAST + BRISK & 149 & 152 & 150 & 155 & 149 & 149 & 156 & 150 & 138 \\
-    FAST + BRIEF & 149 & 152 & 150 & 155 & 149 & 149 & 156 & 150 & 138 \\
-    FAST + ORB & 149 & 152 & 150 & 155 & 149 & 149 & 156 & 150 & 138 \\
-    FAST + FREAK & 149 & 152 & 150 & 155 & 149 & 149 & 156 & 150 & 138 \\
-    FAST + AKAZE & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A \\
-    FAST + SIFT & 149 & 152 & 150 & 155 & 149 & 149 & 156 & 150 & 138 \\
-    \hline \\
-    BRISK + BRISK & 264 & 282 & 282 & 277 & 297 & 279 & 289 & 272 & 266 \\
-    BRISK + BRIEF & 264 & 282 & 282 & 277 & 297 & 279 & 289 & 272 & 266 \\
-    BRISK + ORB & 264 & 282 & 282 & 277 & 297 & 279 & 289 & 272 & 266 \\
-    BRISK + FREAK & 242 & 260 & 263 & 264 & 274 & 256 & 269 & 255 & 243 \\
-    BRISK + AKAZE & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A \\
-    BRISK + SIFT & 264 & 282 & 282 & 277 & 297 & 279 & 289 & 272 & 266 \\
-    \hline \\
-    ORB + BRISK & 83 & 93 & 95 & 103 & 101 & 116 & 120 & 120 & 119 \\
-    ORB + BRIEF & 92 & 102 & 106 & 113 & 109 & 125 & 130 & 129 & 127 \\
-    ORB + ORB & 92 & 102 & 106 & 113 & 109 & 125 & 130 & 129 & 127 \\
-    ORB + FREAK & 46 & 53 & 56 & 65 & 55 & 64 & 66 & 71 & 73 \\
-    ORB + AKAZE & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A \\
-    ORB + SIFT & 92 & 102 & 106 & 113 & 109 & 125 & 130 & 129 & 127 \\
-    \hline \\
-    AKAZE + BRISK & 166 & 157 & 161 & 155 & 163 & 164 & 173 & 175 & 177 \\
-    AKAZE + BRIEF & 166 & 157 & 161 & 155 & 163 & 164 & 173 & 175 & 177 \\
-    AKAZE + ORB & 166 & 157 & 161 & 155 & 163 & 164 & 173 & 175 & 177 \\
-    AKAZE + FREAK & 166 & 157 & 161 & 155 & 163 & 164 & 173 & 175 & 177 \\
-    AKAZE + AKAZE & 166 & 157 & 161 & 155 & 163 & 164 & 173 & 175 & 177 \\
-    AKAZE + SIFT & 166 & 157 & 161 & 155 & 163 & 164 & 173 & 175 & 177 \\
-    \hline \\
-    SIFT + BRISK & 137 & 132 & 124 & 137 & 134 & 140 & 137 & 148 & 159 \\
-    SIFT + BRIEF & 138 & 132 & 124 & 137 & 134 & 140 & 137 & 148 & 159 \\
-    SIFT + ORB & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A \\
-    SIFT + FREAK & 137 & 131 & 123 & 136 & 133 & 139 & 135 & 147 & 158 \\
-    SIFT + AKAZE & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A \\
-    SIFT + SIFT & 138 & 132 & 124 & 137 & 134 & 140 & 137 & 148 & 159 \\
-\end{array}
-$$
+
+| detector/descriptor | Img.0-1 | Img.1-2 | Img.2-3 | Img.3-4 | Img.4-5 | Img.5-6 | Img.6-7 | Img.7-8 | Img.8-9 |
+| ------------------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| Harris + BRISK      | 50      | 54      | 53      | 55      | 56      | 58      | 57      | 61      | 59      |
+| Harris + BRIEF      | 50      | 54      | 53      | 55      | 56      | 58      | 57      | 61      | 59      |
+| Harris + ORB        | 50      | 54      | 53      | 55      | 56      | 58      | 57      | 61      | 59      |
+| Harris + FREAK      | 50      | 54      | 53      | 55      | 56      | 58      | 57      | 61      | 59      |
+| Harris + AKAZE      | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     |
+| Harris + SIFT       | 50      | 54      | 53      | 55      | 56      | 58      | 57      | 61      | 59      |
+|                     |         |         |         |         |         |         |         |         |         |
+| SHITOMASI + BRISK   | 125     | 118     | 123     | 120     | 120     | 113     | 114     | 123     | 111     |
+| SHITOMASI + BRIEF   | 125     | 118     | 123     | 120     | 120     | 113     | 114     | 123     | 111     |
+| SHITOMASI + ORB     | 125     | 118     | 123     | 120     | 120     | 113     | 114     | 123     | 111     |
+| SHITOMASI + FREAK   | 125     | 118     | 123     | 120     | 120     | 113     | 114     | 123     | 111     |
+| SHITOMASI + AKAZE   | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     |
+| SHITOMASI + SIFT    | 125     | 118     | 123     | 120     | 120     | 113     | 114     | 123     | 111     |
+|                     |         |         |         |         |         |         |         |         |         |
+| FAST + BRISK        | 149     | 152     | 150     | 155     | 149     | 149     | 156     | 150     | 138     |
+| FAST + BRIEF        | 149     | 152     | 150     | 155     | 149     | 149     | 156     | 150     | 138     |
+| FAST + ORB          | 149     | 152     | 150     | 155     | 149     | 149     | 156     | 150     | 138     |
+| FAST + FREAK        | 149     | 152     | 150     | 155     | 149     | 149     | 156     | 150     | 138     |
+| FAST + AKAZE        | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     |
+| FAST + SIFT         | 149     | 152     | 150     | 155     | 149     | 149     | 156     | 150     | 138     |
+|                     |         |         |         |         |         |         |         |         |         |
+| BRISK + BRISK       | 264     | 282     | 282     | 277     | 297     | 279     | 289     | 272     | 266     |
+| BRISK + BRIEF       | 264     | 282     | 282     | 277     | 297     | 279     | 289     | 272     | 266     |
+| BRISK + ORB         | 264     | 282     | 282     | 277     | 297     | 279     | 289     | 272     | 266     |
+| BRISK + FREAK       | 242     | 260     | 263     | 264     | 274     | 256     | 269     | 255     | 243     |
+| BRISK + AKAZE       | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     |
+| BRISK + SIFT        | 264     | 282     | 282     | 277     | 297     | 279     | 289     | 272     | 266     |
+|                     |         |         |         |         |         |         |         |         |         |
+| ORB + BRISK         | 83      | 93      | 95      | 103     | 101     | 116     | 120     | 120     | 119     |
+| ORB + BRIEF         | 92      | 102     | 106     | 113     | 109     | 125     | 130     | 129     | 127     |
+| ORB + ORB           | 92      | 102     | 106     | 113     | 109     | 125     | 130     | 129     | 127     |
+| ORB + FREAK         | 46      | 53      | 56      | 65      | 55      | 64      | 66      | 71      | 73      |
+| ORB + AKAZE         | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     |
+| ORB + SIFT          | 92      | 102     | 106     | 113     | 109     | 125     | 130     | 129     | 127     |
+|                     |         |         |         |         |         |         |         |         |         |
+| AKAZE + BRISK       | 166     | 157     | 161     | 155     | 163     | 164     | 173     | 175     | 177     |
+| AKAZE + BRIEF       | 166     | 157     | 161     | 155     | 163     | 164     | 173     | 175     | 177     |
+| AKAZE + ORB         | 166     | 157     | 161     | 155     | 163     | 164     | 173     | 175     | 177     |
+| AKAZE + FREAK       | 166     | 157     | 161     | 155     | 163     | 164     | 173     | 175     | 177     |
+| AKAZE + AKAZE       | 166     | 157     | 161     | 155     | 163     | 164     | 173     | 175     | 177     |
+| AKAZE + SIFT        | 166     | 157     | 161     | 155     | 163     | 164     | 173     | 175     | 177     |
+|                     |         |         |         |         |         |         |         |         |         |
+| SIFT + BRISK        | 137     | 132     | 124     | 137     | 134     | 140     | 137     | 148     | 159     |
+| SIFT + BRIEF        | 138     | 132     | 124     | 137     | 134     | 140     | 137     | 148     | 159     |
+| SIFT + ORB          | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     |
+| SIFT + FREAK        | 137     | 131     | 123     | 136     | 133     | 139     | 135     | 147     | 158     |
+| SIFT + AKAZE        | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     | N/A     |
+| SIFT + SIFT         | 138     | 132     | 124     | 137     | 134     | 140     | 137     | 148     | 159     |
 
 ### MP.9 Performance Evaluation 3
 *Log the time it takes for keypoint detection and descriptor extraction. The results must be entered into a spreadsheet and based on this data, the TOP3 detector / descriptor combinations must be recommended as the best choice for our purpose of detecting keypoints on vehicles.*
 
-$$
-\begin{array}{l|c}
-    Detectors \& Descriptors & BRISK & BRIEF & ORB & FREAK & AKAZE & SIFT \\
-    \hline
-    Harris & 12.89ms & 13.27ms & 15.05ms & 31.97ms & N/A & 29.33ms \\
-    Shi-Tomasi & 14.51ms & 13.96ms & 16.25 & 32.88ms & N/A & 29.46ms \\
-    FAST & 2.85ms & 1.86ms & 3.93ms & 25.08ms & N/A & 19.32ms \\
-    BRISK & 35.36ms & 34.32ms & 43.15ms & 56.28ms & N/A & 57.23ms \\
-    ORB & 7.88ms & 6.89ms & 16.44ms & 30.08ms & N/A & 33.57ms \\
-    AKAZE & 57.96ms & 55.61ms & 62.67ms & 78.50ms & 103.22ms & 72.81ms \\
-    SIFT & 84.70ms & 84.63ms & N/A & 108.17 & N/A & 148.09ms \\
-\end{array}
-$$
+
+
+| Detectors & Descriptors | BRISK   | BRIEF   | ORB     | FREAK   | AKAZE    | SIFT     |
+| ----------------------- | ------- | ------- | ------- | ------- | -------- | -------- |
+| Harris                  | 12.89ms | 13.27ms | 15.05ms | 31.97ms | N/A      | 29.33ms  |
+| Shi-Tomasi              | 14.51ms | 13.96ms | 16.25   | 32.88ms | N/A      | 29.46ms  |
+| FAST                    | 2.85ms  | 1.86ms  | 3.93ms  | 25.08ms | N/A      | 19.32ms  |
+| BRISK                   | 35.36ms | 34.32ms | 43.15ms | 56.28ms | N/A      | 57.23ms  |
+| ORB                     | 7.88ms  | 6.89ms  | 16.44ms | 30.08ms | N/A      | 33.57ms  |
+| AKAZE                   | 57.96ms | 55.61ms | 62.67ms | 78.50ms | 103.22ms | 72.81ms  |
+| SIFT                    | 84.70ms | 84.63ms | N/A     | 108.17  | N/A      | 148.09ms |
+
 
 Consider to the balance of keypoint's distribution, and time efficiency, my top 3 detector + descriptor conbinations would be:
 1. FAST + BRIEF
