@@ -117,8 +117,13 @@ void descKeypoints(vector<cv::KeyPoint> &keypoints, cv::Mat &img,
     double contrastThreshold = 0.04;
     double edgeThreshold = 10;
     double sigma = 1.6;
+#if CV_MINOR_VERSION < 4
+    extractor = cv::xfeatures2d::SIFT::create(
+        nfeatures, nOctaveLayers, contrastThreshold, edgeThreshold, sigma);
+#else
     extractor = cv::SIFT::create(nfeatures, nOctaveLayers, contrastThreshold,
                                  edgeThreshold, sigma);
+#endif
   }
 
   // perform feature description
@@ -217,8 +222,13 @@ void detKeypointsModern(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img,
     double contrastThreshold = 0.04;
     double edgeThreshold = 10;
     double sigma = 1.6;
+#if CV_MINOR_VERSION < 4
+    detector = cv::xfeatures2d::SIFT::create(
+        nfeatures, nOctaveLayers, contrastThreshold, edgeThreshold, sigma);
+#else
     detector = cv::SIFT::create(nfeatures, nOctaveLayers, contrastThreshold,
                                 edgeThreshold, sigma);
+#endif
   }
 
   // Apply corner detection

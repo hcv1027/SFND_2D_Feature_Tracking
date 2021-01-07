@@ -65,6 +65,9 @@ int main(int argc, const char *argv[]) {
 
   // Read config
   readConfig();
+  cout << "CV_VERSION_MAJOR: " << CV_VERSION_MAJOR << endl;
+  cout << "CV_MINOR_VERSION: " << CV_MINOR_VERSION << endl;
+  cout << "CV_SUBMINOR_VERSION: " << CV_SUBMINOR_VERSION << endl;
 
   // data location
   string dataPath = "../";
